@@ -1,0 +1,20 @@
+<%- include('../partials/headerComm') %>
+
+    <table id="list">
+        <tr>
+            <th>Name: <br></th>
+            <th>Address: <br></th>
+        </tr>
+        <tbody>
+          <% restaurants.forEach(function(item) { %>
+            <tr>
+              <td><%= item.name %></td>
+              <td><%= item.address %></td>
+              <td><a href="/commercial/show/<%= item._id %>">DETAILS</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table><br><br><br><br>
+    <a href="/commercial/new">Add New Restaurant</a>
+
+<%- include('../partials/footer') %>

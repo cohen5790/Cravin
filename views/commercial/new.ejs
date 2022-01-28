@@ -1,0 +1,46 @@
+<%- include('../partials/headerComm') %>
+
+    <h1>Add New Restaurant</h1>
+    <form action="/commercial/new" method="POST">
+        <label>Restaurant:
+          <input type="text" name="name">
+        </label><br>
+        <label>Address:
+          <input type ="text" name="address">
+        </label><br>
+        <label>Price:
+              <input type="number" name="price">
+        </label><br>
+        <label>Activity: 
+          <select name="activity" multiple>
+              <% tags.forEach(function(tag) { %>
+                <% if(tag.category === 'activity') { %>
+                    <option value="<%= tag.id%>"><%= tag.tag %></option>
+                <% } %>
+              <% }) %>
+          </select>
+        </label><br>
+        <label>Base:
+            <select name="base" multiple>
+                <% tags.forEach(function(tag) { %>
+                    <% if(tag.category === 'base') { %>
+                        <option value="<%= tag.id%>"><%= tag.tag %></option>
+                    <% } %>
+                  <% }) %>
+            </select>
+        </label><br>
+        <label>Character: 
+            <select name="character" multiple>
+                <% tags.forEach(function(tag) { %>
+                    <% if(tag.category === 'character') { %>
+                        <option value="<%= tag.id%>"><%= tag.tag %></option>
+                    <% } %>
+                  <% }) %>
+            </select><br>
+        <label>Flavour Level: 
+            <input type="number" name="flavour">
+        </label><br>
+        <button type="submit" value="Add Restaurant">Add Restaurant</button>
+    </form>
+
+<%- include('../partials/footer') %>

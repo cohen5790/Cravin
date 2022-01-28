@@ -1,0 +1,40 @@
+<%- include('../partials/headerComm') %>
+
+    <table id="show">
+        <thead>
+            <tr>
+                <th>Restaurant: </th>
+                <th>Address: </th>
+                <th>Price: </th>
+                <th>Activity: </th>
+                <th>Base: </th>
+                <th>Character: </th>
+                <th>Flavour: </th>
+                <th>Veggie: </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= restaurant.name %> </td>
+                <td><%= restaurant.address %></td>
+                <td><%= restaurant.price %></td>
+                <% restaurant.activity.forEach(function(item) { %>
+                    <td><%= item.tag %></td>
+                    <% }) %>               
+                <% restaurant.base.forEach(function(item) { %>
+                    <td><%= item.tag %></td>
+                    <% }) %> 
+                <% restaurant.character.forEach(function(item) { %>
+                    <td><%= item.tag %></td>
+                    <% }) %> 
+                <td><%= restaurant.flavour %></td>
+            </tr>
+        </tbody>
+    </table><br><br><br>
+    <form action="/commercial/show/<%= restaurant.id %>?_method=DELETE" class="delete-form" method="POST">
+        <button type="submit">Remove Restaurant</button>
+    </form>   
+
+<%- include('../partials/footer') %>
+
+

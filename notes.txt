@@ -1,0 +1,38 @@
+<label>Price:
+        <input type="number" name="price">
+    </label><br>
+    <label>Activity: 
+        <select name="activity" multiple>
+            <% tags.forEach(function(tag) { %>
+            <% if(tag.category === 'activity') { %>
+                <option value="<%= tag.id%>"><%= tag.tag %></option>
+            <% } %>
+            <% }) %>
+        </select>
+    </label><br>
+    <label>Base:
+        <select name="base" multiple>
+            <% tags.forEach(function(tag) { %>
+                <% if(tag.category === 'base') { %>
+                    <option value="<%= tag.id%>"><%= tag.tag %></option>
+                <% } %>
+                <% }) %>
+        </select>
+    </label><br>
+    <label>Character: 
+        <select name="character" multiple>
+            <% tags.forEach(function(tag) { %>
+                <% if(tag.category === 'character') { %>
+                    <option value="<%= tag.id%>"><%= tag.tag %></option>
+                <% } %>
+                <% }) %>
+        </select><br>
+    </label><br>
+    <label>Flavour Level: 
+        <input type="number" name="flavour">
+    </label><br>
+    <label>Veggie: 
+        <input type="checkbox" name="veggie">
+    </label><br><br><br>
+    <button type="submit" value="Add Search">I'm Cravin...</button>
+</form>

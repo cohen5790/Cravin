@@ -1,0 +1,38 @@
+<%- include('../partials/headerCust') %>
+
+<h1>Find What You're Cravin</h1>
+
+<h3>Start New Search</h3>
+<form action="/customer/index" method="GET">
+</label><br>
+    <label>Activity: 
+        <select name="activity" multiple>
+            <% tags.forEach(function(tag) { %>
+            <% if(tag.category === 'activity') { %>
+                <option value="<%= tag.id%>"><%= tag.tag %></option>
+            <% } %>
+            <% }) %>
+        </select>
+    </label><br>
+    <label>Base:
+        <select name="base" multiple>
+            <% tags.forEach(function(tag) { %>
+                <% if(tag.category === 'base') { %>
+                    <option value="<%= tag.id%>"><%= tag.tag %></option>
+                <% } %>
+                <% }) %>
+        </select>
+    </label><br>
+    <label>Character: 
+        <select name="character" multiple>
+            <% tags.forEach(function(tag) { %>
+                <% if(tag.category === 'character') { %>
+                    <option value="<%= tag.id%>"><%= tag.tag %></option>
+                <% } %>
+                <% }) %>
+        </select><br>
+    </label><br>
+    <button type="submit" value="Add Search">I'm Cravin...</button>
+</form>
+
+<%- include('../partials/footer') %>
