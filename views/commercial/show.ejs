@@ -1,37 +1,41 @@
 <%- include('../partials/headerComm') %>
 
-    <table id="show">
-        <thead>
+    <table class="index" id="show">
             <tr>
                 <th>Restaurant: </th>
-                <th>Address: </th>
-                <th>Price: </th>
-                <th>Activity: </th>
-                <th>Base: </th>
-                <th>Character: </th>
-                <th>Flavour: </th>
-                <th>Veggie: </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
                 <td><%= restaurant.name %> </td>
+            </tr>
+            <tr>
+                <th>Address: </th>
                 <td><%= restaurant.address %></td>
+            </tr>
+            <tr>
+                <th>Price: </th>
                 <td><%= restaurant.price %></td>
+            </tr>
+            <tr>
+                <th>Activity: </th>
                 <% restaurant.activity.forEach(function(item) { %>
-                    <td><%= item.tag %></td>
-                    <% }) %>               
+                <td><%= item.tag %></td>
+                <% }) %>
+            </tr>
+            <tr>
+                <th>Base: </th>
                 <% restaurant.base.forEach(function(item) { %>
-                    <td><%= item.tag %></td>
-                    <% }) %> 
+                <td><%= item.tag %></td>
+                <% }) %> 
+            </tr>
+            <tr>
+                <th>Character: </th>
                 <% restaurant.character.forEach(function(item) { %>
-                    <td><%= item.tag %></td>
-                    <% }) %> 
+                <td><%= item.tag %></td>
+                <% }) %> 
+            </tr>    
+                <th>Flavour: </th>
                 <td><%= restaurant.flavour %></td>
             </tr>
-        </tbody>
     </table><br><br><br>
-    <form action="/commercial/show/<%= restaurant.id %>?_method=DELETE" class="delete-form" method="POST">
+    <form class="deleteform" action="/commercial/show/<%= restaurant.id %>?_method=DELETE" class="delete-form" method="POST">
         <button type="submit">Remove Restaurant</button>
     </form>   
 

@@ -94,6 +94,19 @@ form {
   padding-bottom: 20px;
 }
 
+.deleteform {
+  padding: 5px;
+  padding-bottom: 5px;
+  block-size: auto;
+}
+
+.bkgrd {
+  background-color: gray;
+  border: solid #e64444;
+  padding: 50px;
+  padding-bottom: 20px;
+}
+
 select {
   font-size: large;
   width: 100%;
@@ -151,6 +164,15 @@ table td {
   padding: 10px;
   text-align: center;
   display: inline-block;
+}
+
+.index {
+  color: black;
+  text-shadow: none;
+}
+
+.index > button {
+  padding: 5px;
 }
 
 #list a {
