@@ -1,8 +1,9 @@
 <%- include('../partials/headerCust') %>
 
 <h1>Find What You're Cravin</h1>
-<h3 >Start New Search</h3>
+
 <form class="runner" action="/customer/index" method="GET">
+    <h3 >Start New Search</h3>
     <label>Activity: 
         <select  name="activity" multiple>
             <% tags.forEach(function(tag) { %>
@@ -31,7 +32,7 @@
         </select><br>
     </label><br>
     <button class="custbtn" type="submit" value="Add Search">Show Me</button>
-    <h6>You may choose multiple tags in each category</h6>
+    <h6>You may choose multiple tags in each category</h6><br>
 </form>
 
 <%- include('../partials/footer') %>
