@@ -1,11 +1,10 @@
 <%- include('../partials/headerCust') %>
 
 <h1>Find What You're Cravin</h1>
-
-<h3>Start New Search</h3>
-<form class="custform" action="/customer/index" method="GET">
+<h3 >Start New Search</h3>
+<form class="runner" action="/customer/index" method="GET">
     <label>Activity: 
-        <select name="activity" multiple>
+        <select  name="activity" multiple>
             <% tags.forEach(function(tag) { %>
             <% if(tag.category === 'activity') { %>
                 <option value="<%= tag.id%>"><%= tag.tag %></option>
@@ -13,7 +12,7 @@
             <% }) %>
         </select>
     </label><br>
-    <label>Base:&nbsp&nbsp&nbsp&nbsp&nbsp
+    <label>Base:
         <select name="base" multiple>
             <% tags.forEach(function(tag) { %>
                 <% if(tag.category === 'base') { %>
@@ -31,7 +30,8 @@
                 <% }) %>
         </select><br>
     </label><br>
-    <button type="submit" value="Add Search">Show Me</button>
+    <button class="custbtn" type="submit" value="Add Search">Show Me</button>
+    <h6>You may choose multiple tags in each category</h6>
 </form>
 
 <%- include('../partials/footer') %>
