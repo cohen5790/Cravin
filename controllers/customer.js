@@ -44,7 +44,7 @@ function indexMatches(req, res) {
         Resto.find({activity: req.query.activity}, function(err, restaurants){
             res.render('customer/index', { restaurants })
         })
-    } 
+    }
     else {
         Resto.find({activtiy: req.query.activity, base: req.query.base, character: req.query.character}, function(err, restaurants){
             res.render('customer/index', { restaurants })

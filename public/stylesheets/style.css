@@ -1,37 +1,31 @@
 
-a {
-  color: darkslategrey;
-}
-
 * {
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: Helvetica;
-  color: #424748;
 }
 
 body {
+  
   margin: 0;
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px 1fr;
+  grid-template-rows: 150px 1fr;
   grid-template-areas: 
     "nav"
-    "main"
+    "main";
 }
 
 body > nav {
   grid-area: nav;
-  background-color: #B8C0C2;
+  background-color: #e64444;
+  border-bottom: solid gray 5px;
+  border-top: solid gray 5px;
+  color: white;
+  font-size: xx-large;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding: 0 20px 0 30px;
-}
-
-nav > img {
-  width: 34px;
-  object-fit: contain;
-  margin-right: auto;
 }
 
 
@@ -45,11 +39,44 @@ body > main {
   overflow-y: scroll;
 }
 
+.dinerimg {
+  background: url('dinertwo.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.custimg {
+  background: url('custimg.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+select {
+  width: 100%;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
 body > main h1:first-child {
   margin-bottom: 50px;
 }
 
+main > a {
+  color: white;
+  background-color: #e64444;
+  border: solid white 5px;
+  border-radius: 25%;
+  padding: 5px 20px 5px 25px;
+  font-size: xx-large;
+  text-decoration: none;
+}
+
+nav > h1 {
+  padding-right: 5vw;
+}
+
 nav > a {
+  color: white;
   margin: 20px;
   text-decoration: none;
   padding: 10px;
@@ -65,42 +92,20 @@ nav > a.active {
   color: white;
 }
 
-#new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
-}
-
-#new-form *,
-#add-review-form *,
-#add-performer-form * {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#new-form input[type="submit"] {
-  grid-column: span 2;
-  width: 10rem;
-  margin-left: auto;
-}
-
 table {
   font-size: 20px;
 }
 
-table thead th {
+thead th {
   padding: 5px;
   border-bottom: 2px solid #424748;
+  display: inline-block;
 }
 
 table td {
   padding: 10px;
   text-align: center;
-}
-
-#list td:nth-child(2), #list td:nth-child(3){
-  min-width: 100px;
+  display: inline-block;
 }
 
 #list a {
@@ -115,29 +120,6 @@ table td {
   background-color: white;
 }
 
-#show-page {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-}
-
-#show-page div:nth-child(even) {
-  font-weight: bold;
-}
-
-#add-review-form,
-#add-performer-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"] {
-  width: 10rem;
-  grid-column: 2 / 3;
-}
 
 ul {
   margin: 0 0 1rem;

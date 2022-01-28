@@ -1,16 +1,18 @@
 <%- include('../partials/headerComm') %>
 
     <table id="list">
+        <thead></thead>
         <tr>
             <th>Name: <br></th>
             <th>Address: <br></th>
         </tr>
+      </thead>
         <tbody>
           <% restaurants.forEach(function(item) { %>
             <tr>
-              <td><%= item.name %></td>
-              <td><%= item.address %></td>
-              <td><a href="/commercial/show/<%= item._id %>">DETAILS</a></td>
+              <td><%= item.name %><br></td>
+              <td><%= item.address %><br></td>
+              <td><a href="/commercial/show/<%= item._id %>">DETAILS</a><br></td>
             </tr>
             <% }); %>
           </tbody>
